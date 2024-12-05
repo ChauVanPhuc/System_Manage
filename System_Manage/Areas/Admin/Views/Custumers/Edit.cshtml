@@ -1,0 +1,64 @@
+﻿@model System_Manage.Models.Custumer
+@{
+
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<div class="header-sub-title">
+    <nav class="breadcrumb breadcrumb-dash">
+        <a class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+        <a class="breadcrumb-item" asp-area="Admin" asp-controller="Custumer" asp-action="Index">Custumer</a>
+        <span class="breadcrumb-item active">Edit Custumer</span>
+    </nav>
+</div>
+
+
+<div class="card">
+    <div class="card-body">
+        <form id="form-validation" asp-area="Admin" asp-controller="Custumers" asp-action="Edit" method="post" enctype="multipart/form-data">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label control-label">Custumer Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="Name" placeholder="Custumer Name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label control-label">Custumer Address</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="Address" placeholder="Custumer Address">
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label control-label">Custumer Phone</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="Phone" placeholder="Custumer Phone">
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label control-label">Custumer MST</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="Mst" placeholder="Custumer MST">
+                    <span asp-validation-for="Mst" class="text-danger"></span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary m-r-5">Submit</button>
+            <a class="btn btn-secondary m-r-5" asp-controller="Custumers" asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+
+    <partial name="_ValidationScriptsPartial" />
+}
+
